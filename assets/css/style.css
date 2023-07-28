@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+}
+
+body,html{
+    padding:0;
+    margin:0;
+}
+
+.card{
+   border:black solid 1px;
+   max-width:500px;
+}
+.bordel img{
+    border:solid 1px red;
+    width:100%;
+}
+
+.navindex{
+    background-color:rgb(82, 82, 255);
+}
+
+.containerIndex{
+    display:flex;
+    justify-content: space-evenly;
+   
+}
+
+
+
