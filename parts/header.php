@@ -41,9 +41,11 @@ $sports = [
   <header>
     <nav class="navIndex">
       <ul>
+        <li><a id="homeBtn" href="index.php">accueil</a></li>
         <li><a href="feed.php?sport=<?= $_SESSION['selected'][0] ?>"><?= $sports[$_SESSION['selected'][0]]['title'] ?></a></li>
         <li> <a href="feed.php?sport=<?= $_SESSION['selected'][1] ?>"><?= $sports[$_SESSION['selected'][1]]['title'] ?></a></li>
         <li><a href="feed.php?sport=<?= $_SESSION['selected'][2] ?>"><?= $sports[$_SESSION['selected'][2]]['title'] ?></a></li>
+        <li><a id="parametersBtn" href="parameters.php">Préférences</a></li>
       </ul>
     </nav>
     <a href="index.php">
