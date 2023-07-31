@@ -1,5 +1,14 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['articlesNumber'])) {
+  $_SESSION['articlesNumber'] = 6;
+}
+
+if (!isset($_SESSION['selected'])) {
+  $_SESSION['selected'] = [1,2,3];
+}
+
 $sports = [
   1 => [
     "title" => "boxe",
@@ -40,8 +49,6 @@ include_once 'parts/header.php';
     for ($i = 1; $i <= $articlesNumber; $i++) {
       //  var_dump($rss_feed->channel->item[$i]->link);
       $article = $rss_feed->channel->item[$i];
-
-
       $dateFr = date("d/m/Y", strtotime($article->pubDate));
     ?>
 

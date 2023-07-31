@@ -10,8 +10,7 @@ if (count($_POST) > 0) {
         unset($_SESSION['selected']);
 
         foreach ($_POST['choiceSport'] as $selected) {
-           $_SESSION['selected'][] = $selected;
-          
+            $_SESSION['selected'][] = $selected;
         }
     }
 }
@@ -27,7 +26,6 @@ if (count($_POST) > 0) {
     </select>
 
     <fieldset>
-
         <legend> Choisissez trois sports :</legend>
         <label for="foot">football</label>
         <input type="checkbox" name="choiceSport[]" value="2" id="foot">

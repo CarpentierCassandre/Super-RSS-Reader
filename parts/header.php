@@ -20,7 +20,6 @@ $sports = [
     "title" => "sports d'hiver",
     "url" => "https://rmcsport.bfmtv.com/rss/sports-d-hiver/",
   ],
-
 ];
 ?>
 
@@ -45,8 +44,6 @@ $sports = [
         <li><a href="feed.php?sport=<?= $_SESSION['selected'][0] ?>"><?= $sports[$_SESSION['selected'][0]]['title'] ?></a></li>
         <li> <a href="feed.php?sport=<?= $_SESSION['selected'][1] ?>"><?= $sports[$_SESSION['selected'][1]]['title'] ?></a></li>
         <li><a href="feed.php?sport=<?= $_SESSION['selected'][2] ?>"><?= $sports[$_SESSION['selected'][2]]['title'] ?></a></li>
-
-        <!-- crée un $_GET -->
       </ul>
     </nav>
     <a href="index.php">
