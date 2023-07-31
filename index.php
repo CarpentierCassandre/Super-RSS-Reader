@@ -29,6 +29,8 @@ $rss_feed = simplexml_load_file($sports[1]['url']);
 session_start();
 $articlesNumber = (isset($_SESSION['articlesNumber']) ? $_SESSION['articlesNumber'] : 12);
 
+// var_dump($_SESSION['selected'][1]);
+
 
 $title = 'SportsActu';
 include_once 'parts/header.php';

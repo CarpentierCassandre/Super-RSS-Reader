@@ -51,3 +51,5 @@ if (count($_POST) > 0) {
 </div>
 
 <?php include_once 'footer.php' ?>
+
+<!-- git merge puis git commit puis git push  -->
