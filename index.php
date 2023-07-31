@@ -1,110 +1,123 @@
-<?php 
+<?php
 
-$sports=[
-  1=>[
+$sports = [
+  1 => [
     "title" => "boxe",
     "url" => "https://rmcsport.bfmtv.com/rss/sports-de-combat/boxe/",
   ],
-  2=>[
-    "title" =>"foot",
+  2 => [
+    "title" => "foot",
     "url" => "https://rmcsport.bfmtv.com/rss/football/coupe-du-monde/",
   ],
-  3=> [
-    "title" =>"rugby",
+  3 => [
+    "title" => "rugby",
     "url" => "https://rmcsport.bfmtv.com/rss/rugby/",
   ],
-  4=> [
-    "title"=>"sports extrêmes",
-    "url" =>"https://rmcsport.bfmtv.com/rss/sports-extremes/",
+  4 => [
+    "title" => "sports extrêmes",
+    "url" => "https://rmcsport.bfmtv.com/rss/sports-extremes/",
   ],
-  5=>[
-    "title"=> "sports d'hiver",
+  5 => [
+    "title" => "sports d'hiver",
     "url" => "https://rmcsport.bfmtv.com/rss/sports-d-hiver/",
   ],
-  
+
 ];
 
 // on charge un fichier xml
 $rss_feed = simplexml_load_file($sports[1]['url']);
 session_start();
-$articlesNumber = (isset($_SESSION['articlesNumber'])?$_SESSION['articlesNumber']:12);
-// var_dump($articlesNumber);
+$articlesNumber = (isset($_SESSION['articlesNumber']) ? $_SESSION['articlesNumber'] : 12);
 
-$title='SportsActu';
+var_dump($_SESSION['selected'][1]);
+// var_dump($_SESSION['selected'][0]);
+//  if ($_SESSION ['seleceted']==1)  {
+//    $sports[1];
+//  }
+
+//  if ($_SESSION ['seleceted']==2){
+
+//  }
+ 
+//  $_SESSION ['seleceted']==3
+//  $_SESSION ['seleceted']==4
+//  $_SESSION ['seleceted']==5
+
+$title = 'SportsActu';
 include_once 'parts/header.php';
 ?>
 
 <div class="containerIndex">
 
-    <div class="box">
-<?php $rss_feed = simplexml_load_file($sports[1]["url"]);
-for ($i=1;$i<=$articlesNumber;$i++){
-//  var_dump($rss_feed->channel->item[$i]->link);
- $article=$rss_feed->channel->item[$i];
+  <div class="box">
+    <?php $rss_feed = simplexml_load_file($sports[$_SESSION['selected'][0]]["url"]);
+    for ($i = 1; $i <= $articlesNumber; $i++) {
+      //  var_dump($rss_feed->channel->item[$i]->link);
+      $article = $rss_feed->channel->item[$i];
 
 
-$dateFr = date("d/m/Y", strtotime($article->pubDate));
+      $dateFr = date("d/m/Y", strtotime($article->pubDate));
     ?>
 
-         <h2>
-           <?php echo $article->title; ?>
-         </h2>
-         <div> 
-           <?= $article->description; ?>
-         </div>
+      <h2>
+        <?php echo $article->title; ?>
+      </h2>
+      <div>
+        <?= $article->description; ?>
+      </div>
 
-         <?= $dateFr ?></p>
-         <a href="<?php echo $article->link; ?>">Lire la suite</a>
-    
-       <?php } ?>
+      <?= $dateFr ?></p>
+      <a href="<?php echo $article->link; ?>">Lire la suite</a>
+
+    <?php } ?>
 
 
-    </div>
+  </div>
 
-    <div class="box">
-    <?php $rss_feed = simplexml_load_file($sports[2]["url"]);
-for ($i=1;$i<=$articlesNumber;$i++){
-//  var_dump($rss_feed->channel->item[$i]->link);
- $article=$rss_feed->channel->item[$i];
-// }
+  <div class="box">
+    <?php $rss_feed = simplexml_load_file($sports[$_SESSION['selected'][1]]["url"]);
+    for ($i = 1; $i <= $articlesNumber; $i++) {
+      //  var_dump($rss_feed->channel->item[$i]->link);
+      $article = $rss_feed->channel->item[$i];
+      // }
 
-$dateFr = date("d/m/Y", strtotime($article->pubDate));
+      $dateFr = date("d/m/Y", strtotime($article->pubDate));
     ?>
 
-         <h2>
-           <?php echo $article->title; ?>
-         </h2>
-         <div> 
-           <?= $article->description; ?>
-         </div>
+      <h2>
+        <?php echo $article->title; ?>
+      </h2>
+      <div>
+        <?= $article->description; ?>
+      </div>
 
-         <?= $dateFr ?></p>
-         <a href="<?php echo $article->link; ?>">Lire la suite</a>
-    
-       <?php } ?>
-    </div>
+      <?= $dateFr ?></p>
+      <a href="<?php echo $article->link; ?>">Lire la suite</a>
 
-    <div class="box">
-    <?php $rss_feed = simplexml_load_file($sports[3]["url"]);
-for ($i=1;$i<=$articlesNumber;$i++){
-//  var_dump($rss_feed->channel->item[$i]->link);
- $article=$rss_feed->channel->item[$i];
-// }
+    <?php } ?>
+  </div>
 
-$dateFr = date("d/m/Y", strtotime($article->pubDate));
+  <div class="box">
+    <?php $rss_feed = simplexml_load_file($sports[$_SESSION['selected'][2]]["url"]);
+    for ($i = 1; $i <= $articlesNumber; $i++) {
+      //  var_dump($rss_feed->channel->item[$i]->link);
+      $article = $rss_feed->channel->item[$i];
+      // }
+
+      $dateFr = date("d/m/Y", strtotime($article->pubDate));
     ?>
 
-         <h2>
-           <?php echo $article->title; ?>
-         </h2>
-         <div> 
-           <?= $article->description; ?>
-         </div>
+      <h2>
+        <?php echo $article->title; ?>
+      </h2>
+      <div>
+        <?= $article->description; ?>
+      </div>
 
-         <?= $dateFr ?></p>
-         <a href="<?php echo $article->link; ?>">Lire la suite</a>
-    
-       <?php } ?>
-    </div>
+      <?= $dateFr ?></p>
+      <a href="<?php echo $article->link; ?>">Lire la suite</a>
 
-<?php include_once 'parts/footer.php' ?>
+    <?php } ?>
+  </div>
+
+  <?php include_once 'parts/footer.php' ?>
