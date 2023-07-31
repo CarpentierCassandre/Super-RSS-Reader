@@ -1,4 +1,5 @@
 <?php
+session_start();
 $sports=[
   1=>[
     "title" => "boxe",
@@ -41,16 +42,19 @@ include_once 'parts/header.php';
     ?>
 
       <div class="card">
-       
-        <h2>
-          <?php echo $item->title; ?>
-        </h2>
-        <div> 
+        <a class="itemReadMore" target="_blank" href="<?php echo $item->link; ?>">
+          <h2 class="itemTitle">
+            <?php echo $item->title; ?>
+          </h2>
+        </a>
+        <div class="itemDescription">
           <?= $item->description; ?>
         </div>
 
-        <?= $dateFr ?></p>
-        <a href="<?php echo $item->link; ?>">Lire la suite</a>
+        <div class="itemDateRead">
+          <p class="itemDate"><?= $dateFr ?></p>
+          <a class="itemReadMore" target="_blank" href="<?php echo $item->link; ?>">Lire la suite</a>
+        </div>
       </div>
 
     <?php
