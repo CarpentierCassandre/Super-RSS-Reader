@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $sports = [
   1 => [
     "title" => "boxe",
@@ -26,7 +26,6 @@ $sports = [
 
 // on charge un fichier xml
 $rss_feed = simplexml_load_file($sports[1]['url']);
-session_start();
 $articlesNumber = (isset($_SESSION['articlesNumber']) ? $_SESSION['articlesNumber'] : 12);
 
 
