@@ -15,6 +15,8 @@
                 <li> <a href="feed.php?sport=3">Rugby</a></li>
                 <li><a href="feed.php?sport=1">Boxe</a></li>
                 <li><a href="feed.php?sport=4">Sports extrêmes</a></li>
+                <li><a href="feed.php?sport=5">Sports d'hiver </a></li>
+                
                 <!-- crée un $_GET -->
             </ul>
         </nav>

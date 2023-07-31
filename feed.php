@@ -16,6 +16,11 @@ $sports=[
     "title"=>"sports extrêmes",
     "url" =>"https://rmcsport.bfmtv.com/rss/sports-extremes/",
   ],
+
+  5=>[
+    "title"=> "sports d'hiver",
+    "url" => "https://rmcsport.bfmtv.com/rss/sports-d-hiver/",
+  ],
   
 ];
 

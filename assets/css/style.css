@@ -19,7 +19,9 @@ body,html{
 .navindex{
     background-color:rgb(82, 82, 255);
 }
-
+ul> li{
+    list-style-type: none;
+}
 .containerIndex{
     display:flex;
     justify-content: space-evenly;

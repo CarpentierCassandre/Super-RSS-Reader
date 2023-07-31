@@ -17,6 +17,10 @@ $sports=[
     "title"=>"sports extrêmes",
     "url" =>"https://rmcsport.bfmtv.com/rss/sports-extremes/",
   ],
+  5=>[
+    "title"=> "sports d'hiver",
+    "url" => "https://rmcsport.bfmtv.com/rss/sports-d-hiver/",
+  ],
   
 ];
 
@@ -24,7 +28,8 @@ $sports=[
 $rss_feed = simplexml_load_file($sports[1]['url']);
 session_start();
 $articlesNumber = (isset($_SESSION['articlesNumber'])?$_SESSION['articlesNumber']:12);
-var_dump($articlesNumber);
+// var_dump($articlesNumber);
+
 $title='SportsActu';
 include_once 'parts/header.php';
 ?>
@@ -34,17 +39,72 @@ include_once 'parts/header.php';
     <div class="box">
 <?php $rss_feed = simplexml_load_file($sports[1]["url"]);
 for ($i=1;$i<=$articlesNumber;$i++){
-var_dump($rss_feed->channel->item[$i]);
-}
-?>
+//  var_dump($rss_feed->channel->item[$i]->link);
+ $article=$rss_feed->channel->item[$i];
+
+
+$dateFr = date("d/m/Y", strtotime($article->pubDate));
+    ?>
+
+         <h2>
+           <?php echo $article->title; ?>
+         </h2>
+         <div> 
+           <?= $article->description; ?>
+         </div>
+
+         <?= $dateFr ?></p>
+         <a href="<?php echo $article->link; ?>">Lire la suite</a>
+    
+       <?php } ?>
+
+
     </div>
 
     <div class="box">
-<?php include_once 'rugby.php'?>
+    <?php $rss_feed = simplexml_load_file($sports[2]["url"]);
+for ($i=1;$i<=$articlesNumber;$i++){
+//  var_dump($rss_feed->channel->item[$i]->link);
+ $article=$rss_feed->channel->item[$i];
+// }
+
+$dateFr = date("d/m/Y", strtotime($article->pubDate));
+    ?>
+
+         <h2>
+           <?php echo $article->title; ?>
+         </h2>
+         <div> 
+           <?= $article->description; ?>
+         </div>
+
+         <?= $dateFr ?></p>
+         <a href="<?php echo $article->link; ?>">Lire la suite</a>
+    
+       <?php } ?>
     </div>
 
     <div class="box">
-<?php include_once 'boxe.php'?>
+    <?php $rss_feed = simplexml_load_file($sports[3]["url"]);
+for ($i=1;$i<=$articlesNumber;$i++){
+//  var_dump($rss_feed->channel->item[$i]->link);
+ $article=$rss_feed->channel->item[$i];
+// }
+
+$dateFr = date("d/m/Y", strtotime($article->pubDate));
+    ?>
+
+         <h2>
+           <?php echo $article->title; ?>
+         </h2>
+         <div> 
+           <?= $article->description; ?>
+         </div>
+
+         <?= $dateFr ?></p>
+         <a href="<?php echo $article->link; ?>">Lire la suite</a>
+    
+       <?php } ?>
     </div>
 
 <?php include_once 'parts/footer.php' ?>
