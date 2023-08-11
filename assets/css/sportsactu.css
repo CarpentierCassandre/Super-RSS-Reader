@@ -60,6 +60,14 @@ a {
     color: white;
 }
 
+#homeBtn {
+    margin-right: 50px;
+}
+
+#parametersBtn {
+    margin-left: 50px;
+}
+
 .containerIndex {
     display: flex;
     justify-content: space-evenly;
@@ -146,4 +154,36 @@ main {
         width: 100%;
         padding: 30px;
     }
+}
+
+/* PREFERENCES */
+
+.preferencesContainer {
+    margin: 0 auto;
+    width: 70%;
+}
+
+form {
+    margin-bottom: 30px;
+}
+
+fieldset {
+    padding: 30px;
+}
+
+.labelSeparator {
+    padding: 10px;
+}
+
+#destroyBtn {
+    background: rgb(245, 93, 93);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+/* DESTROY */
+
+.destroySection {
+text-align: center;
 }

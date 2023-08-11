@@ -1,28 +1,28 @@
 <?php
 session_start();
-$sports=[
-  1=>[
+$sports = [
+  1 => [
     "title" => "boxe",
     "url" => "https://rmcsport.bfmtv.com/rss/sports-de-combat/boxe/",
   ],
-  2=>[
-    "title" =>"foot",
+  2 => [
+    "title" => "foot",
     "url" => "https://rmcsport.bfmtv.com/rss/football/coupe-du-monde/",
   ],
-  3=> [
-    "title" =>"rugby",
+  3 => [
+    "title" => "rugby",
     "url" => "https://rmcsport.bfmtv.com/rss/rugby/",
   ],
-  4=> [
-    "title"=>"sports extrêmes",
-    "url" =>"https://rmcsport.bfmtv.com/rss/sports-extremes/",
+  4 => [
+    "title" => "sports extrêmes",
+    "url" => "https://rmcsport.bfmtv.com/rss/sports-extremes/",
   ],
 
-  5=>[
-    "title"=> "sports d'hiver",
+  5 => [
+    "title" => "sports d'hiver",
     "url" => "https://rmcsport.bfmtv.com/rss/sports-d-hiver/",
   ],
-  
+
 ];
 
 $title = $sports[$_GET['sport']]["title"];
